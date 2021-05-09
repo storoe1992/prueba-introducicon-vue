@@ -15,6 +15,7 @@
               <th scope="col">Nombre</th>
               <th scope="col">Precio Total</th>
               <th scope="col">Cantidad Vendida</th>
+              <th scope="col">Fecha</th>
             </tr>
           </thead>
 
@@ -31,6 +32,7 @@
               <td>{{ venta.nombre }}</td>
               <td>{{ venta.precioSubtotal }}</td>
               <td>{{ venta.cantidadVendida }}</td>
+              <td>{{ venta.date }}</td>
             </tr>
           </tbody>
         </table>

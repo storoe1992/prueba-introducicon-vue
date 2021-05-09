@@ -23,11 +23,15 @@ describe('Inventario.vue', () => {
     store = new Vuex.Store({state});
   });
 
-  it('given first element of inventario without stock it mush have withoutstock class', () => {
+  it('given first element of inventario without stock it must have withoutstock class', () => {
     const wrapper = shallowMount(Inventario, {store,localVue})
     let trNoStock = wrapper.findAll('tbody tr').at(0);
-    let trWithStock = wrapper.findAll('tbody tr').at(1);
     expect(trNoStock.classes('withoutstock')).toBe(true);
+  })
+  
+  it('given second element of inventario with stock it must not have withoutstock class', () => {
+    const wrapper = shallowMount(Inventario, {store,localVue})
+    let trWithStock = wrapper.findAll('tbody tr').at(1);
     expect(trWithStock.classes('withoutstock')).toBe(false);
   })
 })
